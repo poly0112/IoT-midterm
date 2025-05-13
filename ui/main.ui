@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="windowTitle">
+   <string>Valve Control Panel</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+
+    <!-- Left Valves -->
+    <item>
+     <layout class="QVBoxLayout" name="leftValvesLayout">
+      <!-- Left Valve 1~5 -->
+      <item>
+       <widget class="QGroupBox" name="groupBox_valveL1">
+        <property name="title">
+         <string>Left Valve 1</string>
+        </property>
+        <layout class="QVBoxLayout">
+         <item><widget class="QPushButton" name="btn_valveL1"><property name="text"><string>ON/OFF</string></property></widget></item>
+         <item><widget class="QLabel" name="status_valveL1"><property name="text"><string>● OFF</string></property></widget></item>
+         <item><widget class="QLabel" name="time_valveL1"><property name="text"><string>Time: 00:00:00</string></property></widget></item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="groupBox_valveL2">
+        <property name="title"><string>Left Valve 2</string></property>
+        <layout class="QVBoxLayout">
+         <item><widget class="QPushButton" name="btn_valveL2"><property name="text"><string>ON/OFF</string></property></widget></item>
+         <item><widget class="QLabel" name="status_valveL2"><property name="text"><string>● OFF</string></property></widget></item>
+         <item><widget class="QLabel" name="time_valveL2"><property name="text"><string>Time: 00:00:00</string></property></widget></item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="groupBox_valveL3">
+        <property name="title"><string>Left Valve 3</string></property>
+        <layout class="QVBoxLayout">
+         <item><widget class="QPushButton" name="btn_valveL3"><property name="text"><string>ON/OFF</string></property></widget></item>
+         <item><widget class="QLabel" name="status_valveL3"><property name="text"><string>● OFF</string></property></widget></item>
+         <item><widget class="QLabel" name="time_valveL3"><property name="text"><string>Time: 00:00:00</string></property></widget></item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="groupBox_valveL4">
+        <property name="title"><string>Left Valve 4</string></property>
+        <layout class="QVBoxLayout">
+         <item><widget class="QPushButton" name="btn_valveL4"><property name="text"><string>ON/OFF</string></property></widget></item>
+         <item><widget class="QLabel" name="status_valveL4"><property name="text"><string>● OFF</string></property></widget></item>
+         <item><widget class="QLabel" name="time_valveL4"><property name="text"><string>Time: 00:00:00</string></property></widget></item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="groupBox_valveL5">
+        <property name="title"><string>Left Valve 5</string></property>
+        <layout class="QVBoxLayout">
+         <item><widget class="QPushButton" name="btn_valveL5"><property name="text"><string>ON/OFF</string></property></widget></item>
+         <item><widget class="QLabel" name="status_valveL5"><property name="text"><string>● OFF</string></property></widget></item>
+         <item><widget class="QLabel" name="time_valveL5"><property name="text"><string>Time: 00:00:00</string></property></widget></item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </item>
+
+    <!-- Pipe Layout -->
+    <item>
+     <widget class="QLabel" name="pipe_image">
+      <property name="text">
+       <string>🔧 Pipe Layout Here 🔧</string>
+      </property>
+     </widget>
+    </item>
+
+    <!-- Right Valves -->
+    <item>
+     <layout class="QVBoxLayout" name="rightValvesLayout">
+      <!-- Right Valve 1~5 -->
+      <item>
+       <widget class="QGroupBox" name="groupBox_valveR1">
+        <property name="title"><string>Right Valve 1</string></property>
+        <layout class="QVBoxLayout">
+         <item><widget class="QPushButton" name="btn_valveR1"><property name="text"><string>ON/OFF</string></property></widget></item>
+         <item><widget class="QLabel" name="status_valveR1"><property name="text"><string>● OFF</string></property></widget></item>
+         <item><widget class="QLabel" name="time_valveR1"><property name="text"><string>Time: 00:00:00</string></property></widget></item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="groupBox_valveR2">
+        <property name="title"><string>Right Valve 2</string></property>
+        <layout class="QVBoxLayout">
+         <item><widget class="QPushButton" name="btn_valveR2"><property name="text"><string>ON/OFF</string></property></widget></item>
+         <item><widget class="QLabel" name="status_valveR2"><property name="text"><string>● OFF</string></property></widget></item>
+         <item><widget class="QLabel" name="time_valveR2"><property name="text"><string>Time: 00:00:00</string></property></widget></item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="groupBox_valveR3">
+        <property name="title"><string>Right Valve 3</string></property>
+        <layout class="QVBoxLayout">
+         <item><widget class="QPushButton" name="btn_valveR3"><property name="text"><string>ON/OFF</string></property></widget></item>
+         <item><widget class="QLabel" name="status_valveR3"><property name="text"><string>● OFF</string></property></widget></item>
+         <item><widget class="QLabel" name="time_valveR3"><property name="text"><string>Time: 00:00:00</string></property></widget></item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="groupBox_valveR4">
+        <property name="title"><string>Right Valve 4</string></property>
+        <layout class="QVBoxLayout">
+         <item><widget class="QPushButton" name="btn_valveR4"><property name="text"><string>ON/OFF</string></property></widget></item>
+         <item><widget class="QLabel" name="status_valveR4"><property name="text"><string>● OFF</string></property></widget></item>
+         <item><widget class="QLabel" name="time_valveR4"><property name="text"><string>Time: 00:00:00</string></property></widget></item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="groupBox_valveR5">
+        <property name="title"><string>Right Valve 5</string></property>
+        <layout class="QVBoxLayout">
+         <item><widget class="QPushButton" name="btn_valveR5"><property name="text"><string>ON/OFF</string></property></widget></item>
+         <item><widget class="QLabel" name="status_valveR5"><property name="text"><string>● OFF</string></property></widget></item>
+         <item><widget class="QLabel" name="time_valveR5"><property name="text"><string>Time: 00:00:00</string></property></widget></item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </item>
+
+   </layout>
+  </widget>
+ </widget>
+</ui>
