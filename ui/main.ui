@@ -67,11 +67,20 @@
      </layout>
     </item>
 
-    <!-- Pipe Layout -->
+    <!-- Pipe Layout (Map Image 삽입) -->
     <item>
      <widget class="QLabel" name="pipe_image">
-      <property name="text">
-       <string>🔧 Pipe Layout Here 🔧</string>
+      <property name="minimumSize">
+       <size>
+        <width>400</width>
+        <height>400</height>
+       </size>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+      <property name="pixmap">
+       <pixmap>map.jpg</pixmap>
       </property>
      </widget>
     </item>
