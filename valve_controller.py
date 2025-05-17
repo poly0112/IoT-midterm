@@ -20,10 +20,16 @@ class ValveController:
     def get_all_valve_ids(self):
         return [f"L{i}" for i in range(1, 6)] + [f"R{i}" for i in range(1, 6)]
 
-    def toggle(self, valve_id):
+    def toggle(self, valve_id,status):
         now = time.time()
-        self.status[valve_id] = not self.status[valve_id]
-
+        current_status = self.status[valve_id]
+        if status==2:
+            self.status[valve_id] = not self.status[valve_id]
+        else:
+            if status == current_status:
+                return current_status
+            self.status[valve_id] = status
+        
         button = getattr(self.ui, f"btn_valve{valve_id}")
         if self.status[valve_id]:
             button.setText("ON")
@@ -64,13 +70,8 @@ class ValveController:
         seconds = int(total_seconds)
         h, m, s = seconds // 3600, (seconds % 3600) // 60, seconds % 60
         label = getattr(self.ui, f"time_valve{valve_id}")
-        label.setText(f"Time: {h:02}:{m:02}:{s:02}")
+        label.setText(f"누적 가동 시간 : {h:02}:{m:02}:{s:02}")
         
-    # def update_time_label(self, valve_id):
-    #     seconds = int(self.usage_time[valve_id])
-    #     h, m, s = seconds // 3600, (seconds % 3600) // 60, seconds % 60
-    #     label = getattr(self.ui, f"time_valve{valve_id}")
-    #     label.setText(f"Time: {h:02}:{m:02}:{s:02}")
 
     def update_status_from_mqtt(self, topic, payload):
         valve_id = topic.split("/")[-1]

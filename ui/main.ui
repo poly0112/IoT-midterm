@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1227</width>
-    <height>873</height>
+    <width>1228</width>
+    <height>900</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -44,7 +44,7 @@ QPushButton:hover {
     background-color: #007acc;
 }
 QLabel {
-         font-size: 12pt;
+         font-size: 9pt;
          font-weight: bold;
          color: #333333;
 background-color: #e6f2ff;
@@ -124,8 +124,8 @@ padding: 3px;
      <rect>
       <x>400</x>
       <y>270</y>
-      <width>221</width>
-      <height>121</height>
+      <width>431</width>
+      <height>471</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -152,8 +152,14 @@ padding: 3px;
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgba(0, 0, 0, 0);
-</string>
+     <string notr="true">
+QPushButton {
+                            background-color: rgba(0, 0, 0, 0);
+}
+                            
+                QPushButton:hover {
+                            background-color:rgba(102, 204, 255, 0.4); /* 마우스 올라갔을 때 색상 */
+                        }</string>
     </property>
     <property name="text">
      <string/>
@@ -169,8 +175,14 @@ padding: 3px;
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgba(0, 0, 0, 0);
-</string>
+     <string notr="true">
+QPushButton {
+                            background-color: rgba(0, 0, 0, 0);
+}
+                            
+                QPushButton:hover {
+                            background-color:rgba(102, 204, 255, 0.4); /* 마우스 올라갔을 때 색상 */
+                        }</string>
     </property>
     <property name="text">
      <string/>
@@ -186,8 +198,14 @@ padding: 3px;
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgba(0, 0, 0, 0);
-</string>
+     <string notr="true">
+QPushButton {
+                            background-color: rgba(0, 0, 0, 0);
+}
+                            
+                QPushButton:hover {
+                            background-color:rgba(102, 204, 255, 0.4); /* 마우스 올라갔을 때 색상 */
+                        }</string>
     </property>
     <property name="text">
      <string/>
@@ -203,8 +221,14 @@ padding: 3px;
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgba(0, 0, 0, 0);
-</string>
+     <string notr="true">
+QPushButton {
+                            background-color: rgba(0, 0, 0, 0);
+}
+                            
+                QPushButton:hover {
+                            background-color:rgba(102, 204, 255, 0.4); /* 마우스 올라갔을 때 색상 */
+                        }</string>
     </property>
     <property name="text">
      <string/>
@@ -220,8 +244,14 @@ padding: 3px;
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgba(0, 0, 0, 0);
-</string>
+     <string notr="true">
+QPushButton {
+                            background-color: rgba(0, 0, 0, 0);
+}
+                            
+                QPushButton:hover {
+                            background-color:rgba(102, 204, 255, 0.4); /* 마우스 올라갔을 때 색상 */
+                        }</string>
     </property>
     <property name="text">
      <string/>
@@ -230,10 +260,10 @@ padding: 3px;
    <widget class="QLabel" name="Camera5">
     <property name="geometry">
      <rect>
-      <x>130</x>
-      <y>350</y>
-      <width>221</width>
-      <height>121</height>
+      <x>150</x>
+      <y>110</y>
+      <width>301</width>
+      <height>361</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -253,10 +283,10 @@ padding: 3px;
    <widget class="QLabel" name="Camera4">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>590</y>
-      <width>221</width>
-      <height>121</height>
+      <x>170</x>
+      <y>310</y>
+      <width>331</width>
+      <height>411</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -276,10 +306,10 @@ padding: 3px;
    <widget class="QLabel" name="Camera2">
     <property name="geometry">
      <rect>
-      <x>470</x>
-      <y>530</y>
-      <width>221</width>
-      <height>121</height>
+      <x>540</x>
+      <y>210</y>
+      <width>361</width>
+      <height>441</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -300,9 +330,9 @@ padding: 3px;
     <property name="geometry">
      <rect>
       <x>340</x>
-      <y>710</y>
-      <width>221</width>
-      <height>121</height>
+      <y>260</y>
+      <width>371</width>
+      <height>481</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -384,6 +414,46 @@ padding: 3px;
       <string>누적 가동 시간 : 00:00:00</string>
      </property>
     </widget>
+    <widget class="QLabel" name="reserve_L2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>100</y>
+       <width>191</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>다음 예약 : 없음</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="timer_L2">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>98</y>
+       <width>25</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(0, 0, 0, 0);
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>timer.png</normaloff>timer.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>25</width>
+       <height>25</height>
+      </size>
+     </property>
+    </widget>
    </widget>
    <widget class="QGroupBox" name="groupBox_valveL5">
     <property name="geometry">
@@ -421,6 +491,46 @@ padding: 3px;
      </property>
      <property name="text">
       <string>누적 가동 시간 : 00:00:00</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="reserve_L5">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>100</y>
+       <width>191</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>다음 예약 : 없음</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="timer_L5">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>98</y>
+       <width>25</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(0, 0, 0, 0);
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>timer.png</normaloff>timer.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>25</width>
+       <height>25</height>
+      </size>
      </property>
     </widget>
    </widget>
@@ -471,6 +581,49 @@ padding: 3px;
       <string>누적 가동 시간 : 00:00:00</string>
      </property>
     </widget>
+    <widget class="QPushButton" name="timer_L1">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>98</y>
+       <width>25</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+background-color: rgba(0, 0, 0, 0);
+}
+
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>timer.png</normaloff>timer.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>25</width>
+       <height>25</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QLabel" name="reserve_L1">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>100</y>
+       <width>191</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>다음 예약 : 없음</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QGroupBox" name="groupBox_valveL3">
     <property name="geometry">
@@ -508,6 +661,46 @@ padding: 3px;
      </property>
      <property name="text">
       <string>누적 가동 시간 : 00:00:00</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="reserve_L3">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>100</y>
+       <width>191</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>다음 예약 : 없음</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="timer_L3">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>98</y>
+       <width>25</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(0, 0, 0, 0);
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>timer.png</normaloff>timer.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>25</width>
+       <height>25</height>
+      </size>
      </property>
     </widget>
    </widget>
@@ -552,6 +745,46 @@ padding: 3px;
       <string>누적 가동 시간 : 00:00:00</string>
      </property>
     </widget>
+    <widget class="QLabel" name="reserve_R5">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>100</y>
+       <width>191</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>다음 예약 : 없음</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="timer_R5">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>98</y>
+       <width>25</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(0, 0, 0, 0);
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>timer.png</normaloff>timer.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>25</width>
+       <height>25</height>
+      </size>
+     </property>
+    </widget>
    </widget>
    <widget class="QGroupBox" name="groupBox_valveR2">
     <property name="geometry">
@@ -589,6 +822,46 @@ padding: 3px;
      </property>
      <property name="text">
       <string>누적 가동 시간 : 00:00:00</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="reserve_R2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>100</y>
+       <width>191</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>다음 예약 : 없음</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="timer_R2">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>98</y>
+       <width>25</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(0, 0, 0, 0);
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>timer.png</normaloff>timer.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>25</width>
+       <height>25</height>
+      </size>
      </property>
     </widget>
    </widget>
@@ -630,6 +903,46 @@ padding: 3px;
       <string>누적 가동 시간 : 00:00:00</string>
      </property>
     </widget>
+    <widget class="QLabel" name="reserve_R3">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>100</y>
+       <width>191</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>다음 예약 : 없음</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="timer_R3">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>98</y>
+       <width>25</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(0, 0, 0, 0);
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>timer.png</normaloff>timer.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>25</width>
+       <height>25</height>
+      </size>
+     </property>
+    </widget>
    </widget>
    <widget class="QGroupBox" name="groupBox_valveR1">
     <property name="geometry">
@@ -667,6 +980,46 @@ padding: 3px;
      </property>
      <property name="text">
       <string>누적 가동 시간 : 00:00:00</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="reserve_R1">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>100</y>
+       <width>191</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string notr="true">다음 예약 : 없음</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="timer_R1">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>98</y>
+       <width>25</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(0, 0, 0, 0);
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>timer.png</normaloff>timer.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>25</width>
+       <height>25</height>
+      </size>
      </property>
     </widget>
    </widget>
@@ -708,6 +1061,46 @@ padding: 3px;
       <string>누적 가동 시간 : 00:00:00</string>
      </property>
     </widget>
+    <widget class="QLabel" name="reserve_R4">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>100</y>
+       <width>191</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>다음 예약 : 없음</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="timer_R4">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>98</y>
+       <width>25</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(0, 0, 0, 0);
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>timer.png</normaloff>timer.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>25</width>
+       <height>25</height>
+      </size>
+     </property>
+    </widget>
    </widget>
    <widget class="QGroupBox" name="groupBox_valveL4">
     <property name="geometry">
@@ -747,22 +1140,70 @@ padding: 3px;
       <string>누적 가동 시간 : 00:00:00</string>
      </property>
     </widget>
+    <widget class="QLabel" name="reserve_L4">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>100</y>
+       <width>191</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>다음 예약 : 없음</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="timer_L4">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>98</y>
+       <width>25</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(0, 0, 0, 0);
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>timer.png</normaloff>timer.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>25</width>
+       <height>25</height>
+      </size>
+     </property>
+    </widget>
    </widget>
+   <zorder>groupBox_valveL5</zorder>
    <zorder>pipe_image</zorder>
-   <zorder>layoutWidget</zorder>
-   <zorder>layoutWidget</zorder>
+   <zorder>Camera4</zorder>
+   <zorder>Camera5</zorder>
+   <zorder>groupBox_valveL2</zorder>
+   <zorder>groupBox_valveL1</zorder>
+   <zorder>groupBox_valveL3</zorder>
+   <zorder>groupBox_valveR5</zorder>
+   <zorder>groupBox_valveR2</zorder>
+   <zorder>groupBox_valveR3</zorder>
+   <zorder>groupBox_valveR1</zorder>
+   <zorder>groupBox_valveR4</zorder>
+   <zorder>groupBox_valveL4</zorder>
    <zorder>label_title</zorder>
-   <zorder>Camera1</zorder>
    <zorder>pushButton_1</zorder>
    <zorder>pushButton_2</zorder>
    <zorder>pushButton_3</zorder>
    <zorder>pushButton_4</zorder>
    <zorder>pushButton_5</zorder>
-   <zorder>Camera5</zorder>
-   <zorder>Camera4</zorder>
-   <zorder>Camera2</zorder>
-   <zorder>Camera3</zorder>
    <zorder>btn_exit</zorder>
+   <zorder>Camera3</zorder>
+   <zorder>Camera1</zorder>
+   <zorder>Camera2</zorder>
   </widget>
  </widget>
  <resources/>
