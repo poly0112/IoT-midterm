@@ -2,147 +2,769 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1227</width>
+    <height>873</height>
+   </rect>
+  </property>
   <property name="windowTitle">
-   <string>Valve Control Panel</string>
+   <string>포항 북구청 도시숲 관수 시스템</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow {
+    background-color: white;
+}
+
+QGroupBox {
+    border: 2px solid #007acc;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+QGroupBox::title {
+    subcontrol-origin: margin; 
+    left: 10px;
+    padding: 2px;
+    color: #007acc;
+    font-size: 6pt;
+    font-weight: bold;
+    font-family: &quot;맑은 고딕&quot;, &quot;Malgun Gothic&quot;, sans-serif;
+}
+QPushButton {
+   /* background-color: #007acc;*/
+    background-color: #B0BEC5;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+QPushButton:hover {
+    background-color: #007acc;
+}
+QLabel {
+         font-size: 12pt;
+         font-weight: bold;
+         color: #333333;
+background-color: #e6f2ff;
+border-radius: 4px;
+padding: 3px;
+
+     }
+
+</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <layout class="QHBoxLayout" name="horizontalLayout">
-
-    <!-- Left Valves -->
-    <item>
-     <layout class="QVBoxLayout" name="leftValvesLayout">
-      <!-- Left Valve 1~5 -->
-      <item>
-       <widget class="QGroupBox" name="groupBox_valveL1">
-        <property name="title">
-         <string>Left Valve 1</string>
-        </property>
-        <layout class="QVBoxLayout">
-         <item><widget class="QPushButton" name="btn_valveL1"><property name="text"><string>ON/OFF</string></property></widget></item>
-         <item><widget class="QLabel" name="status_valveL1"><property name="text"><string>● OFF</string></property></widget></item>
-         <item><widget class="QLabel" name="time_valveL1"><property name="text"><string>Time: 00:00:00</string></property></widget></item>
-        </layout>
-       </widget>
-      </item>
-      <item>
-       <widget class="QGroupBox" name="groupBox_valveL2">
-        <property name="title"><string>Left Valve 2</string></property>
-        <layout class="QVBoxLayout">
-         <item><widget class="QPushButton" name="btn_valveL2"><property name="text"><string>ON/OFF</string></property></widget></item>
-         <item><widget class="QLabel" name="status_valveL2"><property name="text"><string>● OFF</string></property></widget></item>
-         <item><widget class="QLabel" name="time_valveL2"><property name="text"><string>Time: 00:00:00</string></property></widget></item>
-        </layout>
-       </widget>
-      </item>
-      <item>
-       <widget class="QGroupBox" name="groupBox_valveL3">
-        <property name="title"><string>Left Valve 3</string></property>
-        <layout class="QVBoxLayout">
-         <item><widget class="QPushButton" name="btn_valveL3"><property name="text"><string>ON/OFF</string></property></widget></item>
-         <item><widget class="QLabel" name="status_valveL3"><property name="text"><string>● OFF</string></property></widget></item>
-         <item><widget class="QLabel" name="time_valveL3"><property name="text"><string>Time: 00:00:00</string></property></widget></item>
-        </layout>
-       </widget>
-      </item>
-      <item>
-       <widget class="QGroupBox" name="groupBox_valveL4">
-        <property name="title"><string>Left Valve 4</string></property>
-        <layout class="QVBoxLayout">
-         <item><widget class="QPushButton" name="btn_valveL4"><property name="text"><string>ON/OFF</string></property></widget></item>
-         <item><widget class="QLabel" name="status_valveL4"><property name="text"><string>● OFF</string></property></widget></item>
-         <item><widget class="QLabel" name="time_valveL4"><property name="text"><string>Time: 00:00:00</string></property></widget></item>
-        </layout>
-       </widget>
-      </item>
-      <item>
-       <widget class="QGroupBox" name="groupBox_valveL5">
-        <property name="title"><string>Left Valve 5</string></property>
-        <layout class="QVBoxLayout">
-         <item><widget class="QPushButton" name="btn_valveL5"><property name="text"><string>ON/OFF</string></property></widget></item>
-         <item><widget class="QLabel" name="status_valveL5"><property name="text"><string>● OFF</string></property></widget></item>
-         <item><widget class="QLabel" name="time_valveL5"><property name="text"><string>Time: 00:00:00</string></property></widget></item>
-        </layout>
-       </widget>
-      </item>
-     </layout>
-    </item>
-
-    <!-- Pipe Layout (Map Image 삽입) -->
-    <item>
-     <widget class="QLabel" name="pipe_image">
-      <property name="minimumSize">
-       <size>
-        <width>400</width>
-        <height>400</height>
-       </size>
-      </property>
-      <property name="scaledContents">
-       <bool>true</bool>
-      </property>
-      <property name="pixmap">
-       <pixmap>map.jpg</pixmap>
-      </property>
-     </widget>
-    </item>
-
-    <!-- Right Valves -->
-    <item>
-     <layout class="QVBoxLayout" name="rightValvesLayout">
-      <!-- Right Valve 1~5 -->
-      <item>
-       <widget class="QGroupBox" name="groupBox_valveR1">
-        <property name="title"><string>Right Valve 1</string></property>
-        <layout class="QVBoxLayout">
-         <item><widget class="QPushButton" name="btn_valveR1"><property name="text"><string>ON/OFF</string></property></widget></item>
-         <item><widget class="QLabel" name="status_valveR1"><property name="text"><string>● OFF</string></property></widget></item>
-         <item><widget class="QLabel" name="time_valveR1"><property name="text"><string>Time: 00:00:00</string></property></widget></item>
-        </layout>
-       </widget>
-      </item>
-      <item>
-       <widget class="QGroupBox" name="groupBox_valveR2">
-        <property name="title"><string>Right Valve 2</string></property>
-        <layout class="QVBoxLayout">
-         <item><widget class="QPushButton" name="btn_valveR2"><property name="text"><string>ON/OFF</string></property></widget></item>
-         <item><widget class="QLabel" name="status_valveR2"><property name="text"><string>● OFF</string></property></widget></item>
-         <item><widget class="QLabel" name="time_valveR2"><property name="text"><string>Time: 00:00:00</string></property></widget></item>
-        </layout>
-       </widget>
-      </item>
-      <item>
-       <widget class="QGroupBox" name="groupBox_valveR3">
-        <property name="title"><string>Right Valve 3</string></property>
-        <layout class="QVBoxLayout">
-         <item><widget class="QPushButton" name="btn_valveR3"><property name="text"><string>ON/OFF</string></property></widget></item>
-         <item><widget class="QLabel" name="status_valveR3"><property name="text"><string>● OFF</string></property></widget></item>
-         <item><widget class="QLabel" name="time_valveR3"><property name="text"><string>Time: 00:00:00</string></property></widget></item>
-        </layout>
-       </widget>
-      </item>
-      <item>
-       <widget class="QGroupBox" name="groupBox_valveR4">
-        <property name="title"><string>Right Valve 4</string></property>
-        <layout class="QVBoxLayout">
-         <item><widget class="QPushButton" name="btn_valveR4"><property name="text"><string>ON/OFF</string></property></widget></item>
-         <item><widget class="QLabel" name="status_valveR4"><property name="text"><string>● OFF</string></property></widget></item>
-         <item><widget class="QLabel" name="time_valveR4"><property name="text"><string>Time: 00:00:00</string></property></widget></item>
-        </layout>
-       </widget>
-      </item>
-      <item>
-       <widget class="QGroupBox" name="groupBox_valveR5">
-        <property name="title"><string>Right Valve 5</string></property>
-        <layout class="QVBoxLayout">
-         <item><widget class="QPushButton" name="btn_valveR5"><property name="text"><string>ON/OFF</string></property></widget></item>
-         <item><widget class="QLabel" name="status_valveR5"><property name="text"><string>● OFF</string></property></widget></item>
-         <item><widget class="QLabel" name="time_valveR5"><property name="text"><string>Time: 00:00:00</string></property></widget></item>
-        </layout>
-       </widget>
-      </item>
-     </layout>
-    </item>
-
-   </layout>
+   <widget class="QLabel" name="label_title">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>1191</width>
+      <height>151</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+        QLabel {
+         color: white;
+         background-color: #007acc;
+         font: bold 30pt &quot;맑은 고딕&quot;;
+         padding: 10px;
+         border-radius: 5px;
+        }
+       </string>
+    </property>
+    <property name="text">
+     <string>포항 북구청 도시숲 관수 시스템</string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::AutoText</enum>
+    </property>
+    <property name="scaledContents">
+     <bool>false</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="pipe_image">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>170</y>
+      <width>651</width>
+      <height>691</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>400</width>
+      <height>400</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 4px solid #007acc;
+    border-radius: 20px;
+    background-color: white;</string>
+    </property>
+    <property name="pixmap">
+     <pixmap>map.PNG</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>false</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Camera1">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>270</y>
+      <width>221</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(0, 0, 0, 0);
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>valve.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_1">
+    <property name="geometry">
+     <rect>
+      <x>382</x>
+      <y>385</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(0, 0, 0, 0);
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>522</x>
+      <y>655</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(0, 0, 0, 0);
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_3">
+    <property name="geometry">
+     <rect>
+      <x>307</x>
+      <y>717</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(0, 0, 0, 0);
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_4">
+    <property name="geometry">
+     <rect>
+      <x>158</x>
+      <y>717</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(0, 0, 0, 0);
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_5">
+    <property name="geometry">
+     <rect>
+      <x>136</x>
+      <y>468</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(0, 0, 0, 0);
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Camera5">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>350</y>
+      <width>221</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(0, 0, 0, 0);
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>valve.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Camera4">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>590</y>
+      <width>221</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(0, 0, 0, 0);
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>valve.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Camera2">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>530</y>
+      <width>221</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(0, 0, 0, 0);
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>valve.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Camera3">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>710</y>
+      <width>221</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(0, 0, 0, 0);
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>valve.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_exit">
+    <property name="geometry">
+     <rect>
+      <x>1130</x>
+      <y>20</y>
+      <width>71</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+            background-color: #e53935;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        QPushButton:hover {
+            background-color: #c62828;
+        }</string>
+    </property>
+    <property name="text">
+     <string>종료</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_valveL2">
+    <property name="geometry">
+     <rect>
+      <x>681</x>
+      <y>310</y>
+      <width>261</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>2-1 구역</string>
+    </property>
+    <widget class="QPushButton" name="btn_valveL2">
+     <property name="geometry">
+      <rect>
+       <x>11</x>
+       <y>21</y>
+       <width>241</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>OFF</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="time_valveL2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>70</y>
+       <width>221</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>누적 가동 시간 : 00:00:00</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_valveL5">
+    <property name="geometry">
+     <rect>
+      <x>681</x>
+      <y>727</y>
+      <width>261</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>5-1 구역</string>
+    </property>
+    <widget class="QPushButton" name="btn_valveL5">
+     <property name="geometry">
+      <rect>
+       <x>11</x>
+       <y>21</y>
+       <width>241</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>OFF</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="time_valveL5">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>70</y>
+       <width>221</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>누적 가동 시간 : 00:00:00</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_valveL1">
+    <property name="geometry">
+     <rect>
+      <x>681</x>
+      <y>171</y>
+      <width>261</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>1-1 구역</string>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
+    </property>
+    <widget class="QPushButton" name="btn_valveL1">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>241</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>OFF</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="time_valveL1">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>70</y>
+       <width>221</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>누적 가동 시간 : 00:00:00</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_valveL3">
+    <property name="geometry">
+     <rect>
+      <x>681</x>
+      <y>449</y>
+      <width>261</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>3-1 구역</string>
+    </property>
+    <widget class="QPushButton" name="btn_valveL3">
+     <property name="geometry">
+      <rect>
+       <x>11</x>
+       <y>21</y>
+       <width>241</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>OFF</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="time_valveL3">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>70</y>
+       <width>221</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>누적 가동 시간 : 00:00:00</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_valveR5">
+    <property name="geometry">
+     <rect>
+      <x>951</x>
+      <y>727</y>
+      <width>261</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>5-2 구역</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+    <widget class="QPushButton" name="btn_valveR5">
+     <property name="geometry">
+      <rect>
+       <x>11</x>
+       <y>21</y>
+       <width>241</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>OFF</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="time_valveR5">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>70</y>
+       <width>221</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>누적 가동 시간 : 00:00:00</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_valveR2">
+    <property name="geometry">
+     <rect>
+      <x>951</x>
+      <y>310</y>
+      <width>261</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>2-2 구역</string>
+    </property>
+    <widget class="QPushButton" name="btn_valveR2">
+     <property name="geometry">
+      <rect>
+       <x>11</x>
+       <y>21</y>
+       <width>241</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>OFF</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="time_valveR2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>70</y>
+       <width>221</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>누적 가동 시간 : 00:00:00</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_valveR3">
+    <property name="geometry">
+     <rect>
+      <x>951</x>
+      <y>449</y>
+      <width>261</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>3-2 구역</string>
+    </property>
+    <widget class="QPushButton" name="btn_valveR3">
+     <property name="geometry">
+      <rect>
+       <x>11</x>
+       <y>21</y>
+       <width>241</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>OFF</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="time_valveR3">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>70</y>
+       <width>221</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>누적 가동 시간 : 00:00:00</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_valveR1">
+    <property name="geometry">
+     <rect>
+      <x>951</x>
+      <y>171</y>
+      <width>259</width>
+      <height>133</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>1-2 구역</string>
+    </property>
+    <widget class="QPushButton" name="btn_valveR1">
+     <property name="geometry">
+      <rect>
+       <x>11</x>
+       <y>21</y>
+       <width>237</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>OFF</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="time_valveR1">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>70</y>
+       <width>221</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>누적 가동 시간 : 00:00:00</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_valveR4">
+    <property name="geometry">
+     <rect>
+      <x>951</x>
+      <y>588</y>
+      <width>261</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>4-2 구역</string>
+    </property>
+    <widget class="QPushButton" name="btn_valveR4">
+     <property name="geometry">
+      <rect>
+       <x>11</x>
+       <y>21</y>
+       <width>241</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>OFF</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="time_valveR4">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>70</y>
+       <width>221</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>누적 가동 시간 : 00:00:00</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_valveL4">
+    <property name="geometry">
+     <rect>
+      <x>681</x>
+      <y>588</y>
+      <width>261</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>4-1 구역</string>
+    </property>
+    <widget class="QPushButton" name="btn_valveL4">
+     <property name="geometry">
+      <rect>
+       <x>11</x>
+       <y>21</y>
+       <width>241</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>OFF</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="time_valveL4">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>70</y>
+       <width>221</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>누적 가동 시간 : 00:00:00</string>
+     </property>
+    </widget>
+   </widget>
+   <zorder>pipe_image</zorder>
+   <zorder>layoutWidget</zorder>
+   <zorder>layoutWidget</zorder>
+   <zorder>label_title</zorder>
+   <zorder>Camera1</zorder>
+   <zorder>pushButton_1</zorder>
+   <zorder>pushButton_2</zorder>
+   <zorder>pushButton_3</zorder>
+   <zorder>pushButton_4</zorder>
+   <zorder>pushButton_5</zorder>
+   <zorder>Camera5</zorder>
+   <zorder>Camera4</zorder>
+   <zorder>Camera2</zorder>
+   <zorder>Camera3</zorder>
+   <zorder>btn_exit</zorder>
   </widget>
  </widget>
+ <resources/>
+ <connections/>
 </ui>

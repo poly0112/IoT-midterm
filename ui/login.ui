@@ -2,54 +2,111 @@
 <ui version="4.0">
  <class>LoginWindow</class>
  <widget class="QWidget" name="LoginWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>313</width>
+    <height>326</height>
+   </rect>
+  </property>
   <property name="windowTitle">
    <string>Login</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+                background-color: #f0f8ff;  /* 아주 연한 파란색 */
+                font-family: '맑은 고딕', 'Segoe UI', sans-serif;
+                font-size: 14px;
+            }
+
+            QLabel#label_title {
+                font-size: 22px;
+                font-weight: bold;
+                color: #003f7d;  /* 깊은 파란색 */
+                qproperty-alignment: AlignHCenter;
+                margin-top: 30px;
+                margin-bottom: 20px;
+            }
+
+            QLineEdit {
+                background-color: white;
+                border: 1px solid #a0a0a0;
+                border-radius: 5px;
+                padding: 6px;
+            }
+
+            QLineEdit:focus {
+                border: 2px solid #0077cc;
+            }
+
+            QPushButton#btn_login {
+                background-color: #005bac;
+                color: white;
+                padding: 8px 12px;
+                border: none;
+                border-radius: 5px;
+            }
+
+            QPushButton#btn_login:hover {
+                background-color: #004a94;
+            }
+
+            QPushButton#btn_login:pressed {
+                background-color: #003366;
+            }</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QLabel" name="label_title">
      <property name="text">
-      <string>Valve Control System</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;포항 북구청 도시숲 &lt;br/&gt;관수 시스템&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QWidget" name="formWidget">
-     <layout class="QFormLayout" name="formLayout">
-      <item row="0" column="0">
-       <widget class="QLabel" name="label_username">
-        <property name="text">
-         <string>Username:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QLineEdit" name="input_username"/>
-      </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="label_password">
-        <property name="text">
-         <string>Password:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="1">
-       <widget class="QLineEdit" name="input_password">
-        <property name="echoMode">
-         <enum>QLineEdit::Password</enum>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
+    <layout class="QFormLayout" name="formLayout">
+     <property name="fieldGrowthPolicy">
+      <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+     </property>
+     <property name="formAlignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     </property>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_username">
+       <property name="text">
+        <string>아이디 : </string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="input_username"/>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_password">
+       <property name="text">
+        <string>비밀번호 : </string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="input_password">
+       <property name="echoMode">
+        <enum>QLineEdit::Password</enum>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
    <item>
     <widget class="QPushButton" name="btn_login">
      <property name="text">
-      <string>Login</string>
+      <string>로그인</string>
      </property>
     </widget>
    </item>
   </layout>
  </widget>
+ <resources/>
+ <connections/>
 </ui>

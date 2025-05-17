@@ -19,7 +19,7 @@ class AppController:
         self.setup_login()
 
         # 지도용 Pixmap 원본 유지
-        self.original_map = QPixmap("map.png")
+        self.original_map = QPixmap("ui/map.PNG")
 
     def setup_login(self):
         self.login_window.btn_login.clicked.connect(self.check_login)
@@ -33,13 +33,25 @@ class AppController:
             self.login_window.close()
             self.main_window.show()
             self.connect_valve_buttons()
+            self.setup_camera_buttons()
+            self.main_window.btn_exit.clicked.connect(self.exit_app)
             self.mqtt.connect()
+            
 
             # 초기 지도 표시
             self.main_window.pipe_image.setPixmap(self.original_map)
             self.main_window.pipe_image.setScaledContents(True)
         else:
             QtWidgets.QMessageBox.warning(self.login_window, "Login Failed", "Invalid credentials")
+            
+    def setup_camera_buttons(self):
+        for i in range(1, 6):
+            button = getattr(self.main_window, f"pushButton_{i}")
+            label = getattr(self.main_window, f"Camera{i}")
+            label.setVisible(False)  # 초기에는 안 보이게
+
+            # 클릭 시 해당 라벨 토글
+            button.clicked.connect(lambda _, l=label: l.setVisible(not l.isVisible()))
 
     def connect_valve_buttons(self):
         for valve_id in self.valves.get_all_valve_ids():
@@ -54,8 +66,10 @@ class AppController:
             self.active_valves.add(valve_id)
         else:
             self.active_valves.discard(valve_id)
-
         self.update_map_highlight()
+
+    def exit_app(self):
+        self.app.quit()
 
     def update_map_highlight(self):
         zone_mapping = {
