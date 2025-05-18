@@ -2,25 +2,22 @@ import paho.mqtt.client as mqtt
 import ssl
 
 # HiveMQ Cloud 설정
-BROKER = "90c8db7f280c4be791395b4e7f0d7643.s1.eu.hivemq.cloud"  
-PORT = 8883  # TLS 포트
-USERNAME = "pohang"  # HiveMQ Cloud 사용자 이름
-PASSWORD = "Iotmidterm1234"  # HiveMQ Cloud 비밀번호
+BROKER = "90c8db7f280c4be791395b4e7f0d7643.s1.eu.hivemq.cloud"
+PORT = 8883
+USERNAME = "pohang"
+PASSWORD = "Iotmidterm1234"
 
 TOPIC_PREFIX = "iottest/valve"
 
 class MqttClient:
     def __init__(self, on_message_callback):
         self.client = mqtt.Client()
-        
-        # ID/PW 설정
         self.client.username_pw_set(USERNAME, PASSWORD)
 
-        # TLS 설정 (인증서 검증 생략 - 테스트용)
-        self.client.tls_set(tls_version=ssl.PROTOCOL_TLS)
-        self.client.tls_insecure_set(True)  # 인증서 검증 생략 (운영 환경에선 False)
+        # TLS 설정 (테스트 목적: 인증서 검증 생략)
+        self.client.tls_set(cert_reqs=ssl.CERT_NONE)
+        self.client.tls_insecure_set(True)
 
-        # 콜백 등록
         self.client.on_message = self._on_message
         self.client.on_connect = self._on_connect
         self.on_message_callback = on_message_callback
@@ -30,17 +27,17 @@ class MqttClient:
         self.client.loop_start()
 
     def _on_connect(self, client, userdata, flags, rc):
-        print(f"[MQTT] Connected with result code {rc}")
-        for i in range(1, 6):
-            topic = f"{TOPIC_PREFIX}/{i}"
-            self.client.subscribe(topic)
-            print(f"[MQTT] Subscribed to {topic}")
+        if rc == 0:
+            print("🟢 연결 성공 (HiveMQ)")
+            self.client.subscribe(f"{TOPIC_PREFIX}/status/+")
+        else:
+            print(f"🔴 연결 실패, 반환 코드: {rc}")
 
     def _on_message(self, client, userdata, msg):
-        print(f"[MQTT] Message received: {msg.topic} → {msg.payload.decode()}")
+        print(f"📩 수신됨: {msg.topic} -> {msg.payload.decode()}")
         self.on_message_callback(msg.topic, msg.payload.decode())
 
     def publish(self, valve_id, state):
         topic = f"{TOPIC_PREFIX}/{valve_id}"
-        print(f"[MQTT] Publishing: {topic} → {state}")
+        print(f"📤 발행: {topic} -> {state}")
         self.client.publish(topic, state, qos=1)
