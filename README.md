@@ -23,6 +23,7 @@ pip install PyQt5 paho-mqtt
 ```
 
 ## 실행 방법
+### 1. CMD 실행
 ![Image](https://github.com/user-attachments/assets/a50cbebd-7114-4856-8c40-38e02ce8b5f0)
 
 파일이 위치한 directory에서 해당 명령어를 통해 실행 가능
@@ -34,3 +35,16 @@ pip install PyQt5 paho-mqtt
 ![Image](https://github.com/user-attachments/assets/165fc5ec-60a3-4412-b626-f2dc97dddfe0)
 
 해당 GUI에서 벨브를 통제 가능
+
+### 2. exe 파일 실행
+
+```bash
+pip install pyinstaller
+```
+
+pyinstaller --noconfirm --onefile --windowed main.py
+해당 명령어를 통해 exe파일 생성
+
+![Image](https://github.com/user-attachments/assets/c52749eb-979a-484f-8f6b-00449e0ff349)
+
+위 파일을 바탕화면에 위치시키고 바탕화면에서 클릭으로 실행 가능
