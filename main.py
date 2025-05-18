@@ -9,10 +9,9 @@ from mqtt import MqttClient
 from valve_controller import ValveController
 from timer import ScheduleDialog
 import json
+import time
+from os.path import exists
 def load_data(file_path, all_valve_ids):
-    import json
-    from os.path import exists
-
     # 기본값들
     status = {vid: False for vid in all_valve_ids}
     reserve = {vid: [] for vid in all_valve_ids}
@@ -45,18 +44,26 @@ def load_data(file_path, all_valve_ids):
             if vid in file_usage:
                 usage_time[vid] = file_usage[vid]
 
+        # 🔧 마지막 저장 시간으로부터 경과된 시간만큼 True인 밸브에 누적
+        last_saved = data.get("last_saved")
+        if last_saved is not None:
+            time_delta = time.time() - last_saved
+            for vid in all_valve_ids:
+                if status[vid]:  # 현재 켜져 있던 밸브
+                    usage_time[vid] += time_delta
+
     return status, reserve, active, usage_time
 
 def save_data(file_path, status, reserve, active, usage_time):
-        data = {
-            "status": status,
-            "reserve": reserve,
-            "active": list(active),  # set → list
-            "usage_time": usage_time
-        }
-        with open(file_path, "w", encoding="utf-8") as f:
-            json.dump(data, f, indent=4, ensure_ascii=False)
-
+    data = {
+        "status": status,
+        "reserve": reserve,
+        "active": list(active),  # set → list
+        "usage_time": usage_time,
+        "last_saved": time.time()  # ⏱ 현재 시간 저장
+    }
+    with open(file_path, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=4, ensure_ascii=False)
 class AppController:
     def __init__(self):
         self.app = QtWidgets.QApplication(sys.argv)
@@ -75,7 +82,50 @@ class AppController:
         self.setup_login()
         # 지도용 Pixmap 원본 유지
         self.original_map = QPixmap("ui/map.PNG")
-    
+        self.setup_timer()
+        for valve_id in self.valve_ids:
+            for time_str, state in self.reserve[valve_id]:
+                    now = QTime.currentTime()
+                    min_diff = 24 * 60  # 1440분 (최대 하루)
+                    next_time = None
+                    next_state = None
+
+                    for time_str, state in self.reserve[valve_id]:
+                        t = QTime.fromString(time_str, "HH:mm")
+                        if not t.isValid():
+                            continue
+
+                        # 현재 시각과의 분 단위 차이 계산
+                        diff = (t.hour() - now.hour()) * 60 + (t.minute() - now.minute())
+                        if diff < 0:
+                            diff += 24 * 60  # 내일 실행될 예약
+                        if diff==0:
+                            continue
+                        if diff < min_diff:
+                            min_diff = diff
+                            next_time = t
+                            next_state = state
+
+                    label = getattr(self.main_window, f"reserve_{valve_id}")
+                    if next_time:
+                        label.setText(f"다음 예약 : {next_time.toString('HH:mm')}  /  {next_state}")
+                    else:
+                        a= QTime.fromString(self.reserve[valve_id][0][0], "HH:mm")
+                        label.setText(f"다음 예약 : {a.toString('HH:mm')}  /  {self.reserve[valve_id][0][1]}")
+        for valve_id in self.valves.get_all_valve_ids():
+                # print(self.status[valve_id])
+                self.toggle_valve(valve_id,1 if self.status[valve_id] else 0)
+        self.connect_valve_buttons()
+        self.setup_camera_buttons()
+        self.main_window.btn_exit.clicked.connect(self.exit_app)
+        self.mqtt.connect()
+        self.connect_timer_buttons()
+
+        # 초기 지도 표시
+        self.main_window.pipe_image.setPixmap(self.original_map)
+        # self.main_window.pipe_image.setScaledContents(True)
+        self.update_map_highlight()
+
     def setup_timer(self):
     # 1. 먼저 현재 시각을 가져옴
         current_time = QTime.currentTime()
@@ -142,50 +192,6 @@ class AppController:
         if username == "admin" and password == "1234":
             self.login_window.close()
             self.main_window.show()
-            self.connect_valve_buttons()
-            self.setup_camera_buttons()
-            self.main_window.btn_exit.clicked.connect(self.exit_app)
-            self.mqtt.connect()
-            self.connect_timer_buttons()
-            self.setup_timer()
-            for valve_id in self.valve_ids:
-                for time_str, state in self.reserve[valve_id]:
-                        now = QTime.currentTime()
-                        min_diff = 24 * 60  # 1440분 (최대 하루)
-                        next_time = None
-                        next_state = None
-
-                        for time_str, state in self.reserve[valve_id]:
-                            t = QTime.fromString(time_str, "HH:mm")
-                            if not t.isValid():
-                                continue
-
-                            # 현재 시각과의 분 단위 차이 계산
-                            diff = (t.hour() - now.hour()) * 60 + (t.minute() - now.minute())
-                            if diff < 0:
-                                diff += 24 * 60  # 내일 실행될 예약
-                            if diff==0:
-                                continue
-                            if diff < min_diff:
-                                min_diff = diff
-                                next_time = t
-                                next_state = state
-
-                        label = getattr(self.main_window, f"reserve_{valve_id}")
-                        if next_time:
-                            label.setText(f"다음 예약 : {next_time.toString('HH:mm')}  /  {next_state}")
-                        else:
-                            a= QTime.fromString(self.reserve[valve_id][0][0], "HH:mm")
-                            label.setText(f"다음 예약 : {a.toString('HH:mm')}  /  {self.reserve[valve_id][0][1]}")
-
-            for valve_id in self.valves.get_all_valve_ids():
-                print(self.status[valve_id])
-                self.toggle_valve(valve_id,1 if self.status[valve_id] else 0)
-
-            # 초기 지도 표시
-            self.main_window.pipe_image.setPixmap(self.original_map)
-            self.main_window.pipe_image.setScaledContents(True)
-            self.update_map_highlight()
         else:
             QtWidgets.QMessageBox.warning(self.login_window, "Login Failed", "Invalid credentials")
             
@@ -217,7 +223,11 @@ class AppController:
         self.update_map_highlight()
 
     def exit_app(self):
+        for valve_id in self.valves.get_all_valve_ids():
+            if self.valves.start_time[valve_id] is not None :
+                self.valves.usage_time[valve_id] += time.time() - self.valves.start_time[valve_id]
         save_data("data.json", self.valves.status, self.reserve, self.active_valves,self.valves.usage_time)
+        
         self.app.quit()
 
     def update_map_highlight(self):
@@ -244,7 +254,7 @@ class AppController:
 
         painter.end()
         self.main_window.pipe_image.setPixmap(pixmap)
-        self.main_window.pipe_image.setScaledContents(True)
+        # self.main_window.pipe_image.setScaledContents(True)
 
     def on_mqtt_message(self, topic, payload):
         self.valves.update_status_from_mqtt(topic, payload)
