@@ -119,29 +119,6 @@ padding: 3px;
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QLabel" name="Camera1">
-    <property name="geometry">
-     <rect>
-      <x>400</x>
-      <y>270</y>
-      <width>431</width>
-      <height>471</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgba(0, 0, 0, 0);
-</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>valve.png</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
    <widget class="QPushButton" name="pushButton_1">
     <property name="geometry">
      <rect>
@@ -255,98 +232,6 @@ QPushButton {
     </property>
     <property name="text">
      <string/>
-    </property>
-   </widget>
-   <widget class="QLabel" name="Camera5">
-    <property name="geometry">
-     <rect>
-      <x>150</x>
-      <y>110</y>
-      <width>301</width>
-      <height>361</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgba(0, 0, 0, 0);
-</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>valve.png</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QLabel" name="Camera4">
-    <property name="geometry">
-     <rect>
-      <x>170</x>
-      <y>310</y>
-      <width>331</width>
-      <height>411</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgba(0, 0, 0, 0);
-</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>valve.png</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QLabel" name="Camera2">
-    <property name="geometry">
-     <rect>
-      <x>540</x>
-      <y>210</y>
-      <width>361</width>
-      <height>441</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgba(0, 0, 0, 0);
-</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>valve.png</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QLabel" name="Camera3">
-    <property name="geometry">
-     <rect>
-      <x>340</x>
-      <y>260</y>
-      <width>371</width>
-      <height>481</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgba(0, 0, 0, 0);
-</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>valve.png</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
     </property>
    </widget>
    <widget class="QPushButton" name="btn_exit">
@@ -1181,10 +1066,308 @@ background-color: rgba(0, 0, 0, 0);
      </property>
     </widget>
    </widget>
+   <widget class="QFrame" name="frame5">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>180</y>
+      <width>221</width>
+      <height>291</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="label_9">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>10</y>
+       <width>121</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font : 15px;
+ font-weight: bold;</string>
+     </property>
+     <property name="text">
+      <string>5 구역 카메라</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="Camera2_8">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>40</y>
+       <width>221</width>
+       <height>251</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 4px solid #007acc;
+
+    padding: 0px;
+    margin: 0px;
+
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>valve.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="frame1">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>200</y>
+      <width>221</width>
+      <height>291</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="label_10">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>10</y>
+       <width>121</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font : 15px;
+ font-weight: bold;</string>
+     </property>
+     <property name="text">
+      <string>1 구역 카메라</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="Camera2_9">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>40</y>
+       <width>221</width>
+       <height>251</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 4px solid #007acc;
+
+    padding: 0px;
+    margin: 0px;
+
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>valve.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="frame2">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>360</y>
+      <width>221</width>
+      <height>291</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="label_11">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>10</y>
+       <width>121</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font : 15px;
+ font-weight: bold;</string>
+     </property>
+     <property name="text">
+      <string>2 구역 카메라</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="Camera2_10">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>40</y>
+       <width>221</width>
+       <height>251</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 4px solid #007acc;
+
+    padding: 0px;
+    margin: 0px;
+
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>valve.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="frame3">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>430</y>
+      <width>221</width>
+      <height>291</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="label_12">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>10</y>
+       <width>121</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font : 15px;
+ font-weight: bold;</string>
+     </property>
+     <property name="text">
+      <string>3 구역 카메라</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="Camera2_11">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>40</y>
+       <width>221</width>
+       <height>251</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 4px solid #007acc;
+
+    padding: 0px;
+    margin: 0px;
+
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>valve.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="frame4">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>430</y>
+      <width>221</width>
+      <height>291</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="label_13">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>10</y>
+       <width>121</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font : 15px;
+ font-weight: bold;</string>
+     </property>
+     <property name="text">
+      <string>4 구역 카메라</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="Camera2_12">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>40</y>
+       <width>221</width>
+       <height>251</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 4px solid #007acc;
+
+    padding: 0px;
+    margin: 0px;
+
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>valve.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
    <zorder>groupBox_valveL5</zorder>
    <zorder>pipe_image</zorder>
-   <zorder>Camera4</zorder>
-   <zorder>Camera5</zorder>
    <zorder>groupBox_valveL2</zorder>
    <zorder>groupBox_valveL1</zorder>
    <zorder>groupBox_valveL3</zorder>
@@ -1201,9 +1384,11 @@ background-color: rgba(0, 0, 0, 0);
    <zorder>pushButton_4</zorder>
    <zorder>pushButton_5</zorder>
    <zorder>btn_exit</zorder>
-   <zorder>Camera3</zorder>
-   <zorder>Camera1</zorder>
-   <zorder>Camera2</zorder>
+   <zorder>frame1</zorder>
+   <zorder>frame2</zorder>
+   <zorder>frame3</zorder>
+   <zorder>frame4</zorder>
+   <zorder>frame5</zorder>
   </widget>
  </widget>
  <resources/>
