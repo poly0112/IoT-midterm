@@ -7,14 +7,16 @@ class ValveController:
         self.status = {}
         self.usage_time = usage_time
         self.start_time = {}
+        for valve_id in self.get_all_valve_ids():
+            self.start_time[valve_id] = None
+            self.status[valve_id]=False
+        for valve_id in self.get_all_valve_ids():
+                self._update_time_label(valve_id, self.usage_time[valve_id])
+        # print("3")
         # 타이머 생성
         self.timer = QTimer()
         self.timer.timeout.connect(self.update_all_times)
         self.timer.start(1000)  # 1초마다 업데이트
-        
-        for valve_id in self.get_all_valve_ids():
-            self.start_time[valve_id] = None
-            self.status[valve_id]=False
 
     def get_all_valve_ids(self):
         return [f"L{i}" for i in range(1, 6)] + [f"R{i}" for i in range(1, 6)]
@@ -56,10 +58,13 @@ class ValveController:
 
     def update_all_times(self):
         now = time.time()
+        # print("1")
         for valve_id in self.get_all_valve_ids():
             if self.status[valve_id] and self.start_time[valve_id]:
-                total = self.usage_time[valve_id] + (now - self.start_time[valve_id])
+                total= self.usage_time[valve_id] + (now - self.start_time[valve_id])
+                # self.update_time_label(valve_id)
                 self._update_time_label(valve_id, total)
+                # print("1")
 
     def update_time_label(self, valve_id):
         total = self.usage_time[valve_id]
@@ -69,7 +74,7 @@ class ValveController:
         seconds = int(total_seconds)
         h, m, s = seconds // 3600, (seconds % 3600) // 60, seconds % 60
         label = getattr(self.ui, f"time_valve{valve_id}")
-        label.setText(f"누적 가동 시간: {h:02}:{m:02}:{s:02}")
+        label.setText(f"누적 가동 시간 : {h:02}:{m:02}:{s:02}")
         
     # def update_time_label(self, valve_id):
     #     seconds = int(self.usage_time[valve_id])
@@ -80,7 +85,6 @@ class ValveController:
     def update_status_from_mqtt(self, topic, payload):  
         # 예: topic = iottest/valve/status/L1
         parts = topic.split("/")
-        print("1")
         if len(parts) == 4 and parts[2] == "state":
             valve_id = parts[3]
             if payload == "active":
