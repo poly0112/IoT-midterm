@@ -120,12 +120,51 @@ class AppController:
         self.main_window.btn_exit.clicked.connect(self.exit_app)
         self.mqtt.connect()
         self.connect_timer_buttons()
-
+        self.main_window.btn_all_settings.clicked.connect(self.open_all_settings_window)
         # 초기 지도 표시
         self.main_window.pipe_image.setPixmap(self.original_map)
         # self.main_window.pipe_image.setScaledContents(True)
         self.update_map_highlight()
+    def open_all_settings_window(self):
+        self.all_settings_window = uic.loadUi("ui/all_settings.ui")
 
+        # 전체 ON/OFF 버튼
+        self.all_settings_window.btn_all_on.clicked.connect(self.turn_all_on)
+        self.all_settings_window.btn_all_off.clicked.connect(self.turn_all_off)
+
+        # 예약 설정도 여기서 연결 가능
+        self.all_settings_window.show()
+    def turn_all_on(self):
+        for valve_id in self.valves.get_all_valve_ids():
+            self.toggle_valve(valve_id,1)
+        self.all_settings_window.btn_all_on.setStyleSheet("background-color: #007acc;")
+        self.all_settings_window.btn_all_off.setStyleSheet("""
+                QPushButton {
+                    background-color: #B0BEC5;
+                    color: white;
+                    border-radius: 5px;
+                    padding: 5px;
+                }
+                QPushButton:hover {
+                    background-color:#007acc;
+                }
+            """)
+    def turn_all_off(self):
+        for valve_id in self.valves.get_all_valve_ids():
+            self.toggle_valve(valve_id,0)
+        self.all_settings_window.btn_all_off.setStyleSheet("background-color: #007acc;")
+        self.all_settings_window.btn_all_on.setStyleSheet("""
+                QPushButton {
+                    background-color: #B0BEC5;
+                    color: white;
+                    border-radius: 5px;
+                    padding: 5px;
+                }
+                QPushButton:hover {
+                    background-color:#007acc;
+                }
+            """)
+    
     def setup_timer(self):
     # 1. 먼저 현재 시각을 가져옴
         current_time = QTime.currentTime()
