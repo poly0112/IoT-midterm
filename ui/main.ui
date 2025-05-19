@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1228</width>
-    <height>900</height>
+    <height>781</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -1366,6 +1366,39 @@ background-color: rgba(0, 0, 0, 0);
      </property>
     </widget>
    </widget>
+   <widget class="QPushButton" name="btn_all_settings">
+    <property name="geometry">
+     <rect>
+      <x>1050</x>
+      <y>20</y>
+      <width>71</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #4a4a4a;  /* 어두운 회색 */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 6px 12px;
+}
+
+/* 마우스 오버 시 – 주황빛 강조 */
+QPushButton:hover {
+    background-color: #e67e22;  /* 주황색 */
+}
+
+/* 눌렀을 때 */
+QPushButton:pressed {
+    background-color: #ca6f1e;  /* 더 진한 주황색 */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>전체 설정</string>
+    </property>
+   </widget>
    <zorder>groupBox_valveL5</zorder>
    <zorder>pipe_image</zorder>
    <zorder>groupBox_valveL2</zorder>
@@ -1389,6 +1422,7 @@ background-color: rgba(0, 0, 0, 0);
    <zorder>frame3</zorder>
    <zorder>frame4</zorder>
    <zorder>frame5</zorder>
+   <zorder>btn_all_settings</zorder>
   </widget>
  </widget>
  <resources/>
